@@ -1,0 +1,28 @@
+services:
+  - type: web
+    plan: free
+    name: movie_bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 bot.py
+    repo: https://github.com/Thorsaboy/Movie_bot.git      
+    branch: main
+    envVars:
+      - key: BOT_TOKEN 
+        sync: false
+      - key: API_ID 
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: PORT
+        sync: false
+      - key: OWNER_USERNAME
+        sync: false
+      - key: DATABASE_URI
+        sync: false     
+      - key: BIN_ChANNEL
+        sync: false
+      - key: AUTO_DELETE_SECONDS
+       sync: false
+    autoDeploy: true
+    
